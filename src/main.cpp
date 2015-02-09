@@ -101,6 +101,8 @@ int main(int argc, char* argv[]) {
 
     //draw the keypoints
     if(vm.count("display")) {
+        cv::namedWindow("features");
+        cv::moveWindow("features", 100, 100);
         cv::drawKeypoints(input_image, keypoints, input_image, cv::Scalar::all(-1), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
         cv::imshow("features", input_image);
         cv::waitKey(0);
